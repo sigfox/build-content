@@ -36,14 +36,21 @@ The two best tips:
 
 You should always aim for the U0 class. Because the Sigfox coverage is calculated for U0 devices, non-U0 devices might not get the coverage they need. Try simulating coverage for U1 to u3 in the Sigfox backend and see whether it suits your project's needs: https://backend.sigfox.com/.
 
-That being said, U1 can be more energy efficient for the same actions when you know what you're doing, so it's tempting to aim for U1.
-
-U1 or even U2 might be enough when some conditions are available:
+That being said, U0 is not mandatory, U1 or even U2 might be enough when some conditions are available:
 
 * The device is located in a fixed location, with a dense network.
 * The device is located outside, on a high tower.
-* Energy-saving is one of the main objectives.
 
 In any other case, U0 should be the target. The Sigfox Device Cookbook has a whole section dedicated to matching use-case and device class: https://build.sigfox.com/sigfox-device-cookbook
 
 Keep in mind that it is very hard to update a U1 device to a U0 one. If you chose to commercialize a U1 device and you get bad feedback about the reception, you will have to rework your device from the start in order to reach U0. It is much easier to aim for U0 right from the start.
+
+
+### Energy consideration
+
+With good antenna design (U0 class device) you can sometimes lower on purpose the radiated power thus saving energy. For example, if you set the transceiver output power at 0dB instead of 14dB you can save about 50% power. This output power can be changed by downlink after installation to optimize the battery life when level of reception is good enough and position is fixed.
+
+The transceiver output power can also be set at factory level for energy saving purpose. You have to know what you are doing here (see §When is U1 enough?)! In that case class U1 or U2 doesn’t mean the hardware is not U0 capable.
+
+
+

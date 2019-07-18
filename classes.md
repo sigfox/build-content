@@ -10,7 +10,7 @@ Simply put, a U0 device enjoys a much better message reception than a non-U0 dev
 
 For instance, in RC1, U0 must have a low EIRP limit of 12 dBm. In RC2, the low limit is at 20 dBm. See more in this document: https://support.sigfox.com/docs/radio-configuration
 
-Therefore, while not mandatory, U0 is the class to aim for when building a device in the majority of use-cases. It is the best way to ensure Sigfox Network Service delivery at nominal performance level.
+Therefore, while not mandatory, U0 is the class to aim for when building a device in the majority of use-cases. It is the best way to ensure Sigfox Network Service delivery at nominal performance level. In essence, the network is deployed to connect U0 devices.
 
 
 ### Tips to improve emission power
@@ -20,7 +20,7 @@ Anything that is added between the module and the open air can lower the EIRP of
 There are best practices to follow when building a device, that will ensure maximal emission power:
 
 * Plan for U0 at the very start of your project. That means integrating the complete RF design (including antenna and mechanical designs) early on, to maximize your chances to be U0 without having to deeply rework your plan later on.
-* Start with a powerful radio base. For instance, choose a very good module/transceiver, so that weakening elements cannot bring the device's EIRP lower than 12 dBm. This means choosing a module/transceiver according to your target RCs.
+* Start with a powerful radio base. For instance, choose a very good module/transceiver, so that weakening elements cannot bring the device's EIRP lower than 12 dBm. This means choosing a module/transceiver according to your target RCs. For instance, in RC1, use a module/transceiver that can broadcast at least at 19 to 20 dBm.
 * Choose your antenna carefully. Better yet: hire an antenna specialist. You can find some on Sigfox Partner Network: https://partners.sigfox.com/companies/antenna-designer
 * Never use a metal casing for the radio part! Prefer a plastic casing. Note that you can choose to have part of your device in a metal casing, provided that the device will be placed on a metal support (antenna, etc.).
 * Leave room within the device, to favor a bigger antenna. This might mean a slightly bigger casing.
@@ -43,14 +43,14 @@ That being said, U0 is not mandatory, U1 or even U2 might be enough when some co
 
 In any other case, U0 should be the target. The Sigfox Device Cookbook has a whole section dedicated to matching use-case and device class: https://build.sigfox.com/sigfox-device-cookbook
 
-Keep in mind that it is very hard to update a U1 device to a U0 one. If you chose to commercialize a U1 device and you get bad feedback about the reception, you will have to rework your device from the start in order to reach U0. It is much easier to aim for U0 right from the start.
+Keep in mind that it is very hard to update a U1 device to a U0 one. If you chose to commercialize a U1 device and you get bad customer feedback about the reception, you will have to rework your device from the start in order to reach U0. It is much easier to aim for U0 right from the start.
 
 
 ### Energy consideration
 
-With good antenna design (U0 class device) you can sometimes lower on purpose the radiated power thus saving energy. For example, if you set the transceiver output power at 0dB instead of 14dB you can save about 50% power. This output power can be changed by downlink after installation to optimize the battery life when level of reception is good enough and position is fixed.
+With a good antenna design, you can lower the device's radiated power on purpose from U0 to U1 or even U2, thus saving energy.  
+However, this implies to have perfect network conditions and a close monitoring of the message success rate. This can mean improving the local network by adding Micro Base Stations, which are specificically created for Smart Building and Smart Warehouse usecases.
 
-The transceiver output power can also be set at factory level for energy saving purpose. You have to know what you are doing here (see §When is U1 enough?)! In that case class U1 or U2 doesn’t mean the hardware is not U0 capable.
+For example, if you set the transceiver output power at 0dB instead of 14dB you can save about 50% power. This output power can be changed by downlink after installation to optimize the battery life when level of reception is good enough and position is fixed.
 
-
-
+The transceiver output power can also be set at factory level for energy-saving purpose. You have to know what you are doing here (see the "When is U1 enough?" section)! In that case class U1 or U2 doesn’t mean the hardware is not U0 capable.

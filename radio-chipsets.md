@@ -81,7 +81,7 @@ Here are a few important additional aspects to consider:
 * Is it available in your needed volume? A chipset can tick all your boxes, but if the maker cannot deliver enough items for your project, then you might want to rethink your choice.
 * Is there a community around it? You don't want to be the only one to use a chipset. Find out whether your pick is used elsewhere, as it can be helpful to have other users to talk with.
 * Is it easy to use? This means having an SDK and a programmable MCU, not an MCU that only does Sigfox modulations with AT commands. Also, check that the SDK environment is maintained and up-to-date.
-* Is there an evaluation board/kit (evalkit) available? Contrary to a devkit, an evalkit is bundled with XXXXXXX
+* Is there an evaluation board/kit available? An evalkit is meant to help you get a better understanding of a given radio chipset. Once you have settled your choice, you can move it to a devkit, which is meant to help you test and have fun with the Sigfox technology!
 * Do you have people at hand who know the chipset already? Ideally, it would be in-house, but having a local provider available can help tremendously.
 
 
